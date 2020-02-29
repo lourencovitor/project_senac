@@ -1,0 +1,925 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentação de todo o backend da aplicação AppSenac, está incluido todas as rotas da aplicação e seus modelos",
+    "version": "1.0.0",
+    "title": "AppSenac"
+  },
+  "tags": [
+    {
+      "name": "Usuário",
+      "description": "Tudo sobre usuários"
+    },
+    {
+      "name": "Curso",
+      "description": "Tudo sobre cursos"
+    },
+    {
+      "name": "Área",
+      "description": "Tudo sobre as áreas"
+    },
+    {
+      "name": "SubArea",
+      "description": "Tudo sobre as subareas"
+    },
+    {
+      "name": "Login",
+      "description": "Login"
+    },
+    {
+      "name": "Update Password",
+      "description": "Atualiza senha"
+    },
+    {
+      "name": "User Code",
+      "description": "Valida um usuário"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/user": {
+      "get": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Lista todos usuários cadastrados",
+        "description": "hsuahusa",
+        "responses": {
+          "200": {
+            "description": "Usuários encontrados"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Cria um usuário",
+        "description": "",
+        "operationId": "updatePet",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Requerimentos para criar usuário",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário criado com sucesso"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/user/{id}": {
+      "get": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Exibi um usuário cadastrado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Id localizado com sucesso"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Deleta um registro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Id localizado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Atualiza um registro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          },
+          {
+            "in": "body",
+            "name": "id",
+            "description": "Modelo de atualização de usuário",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid user supplied"
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "200": {
+            "description": "Usuário atualizado com sucesso!"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/curso": {
+      "get": {
+        "tags": [
+          "Curso"
+        ],
+        "summary": "Lista todos os cursos cadastrados",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Cursos"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Curso"
+        ],
+        "summary": "Cria um curso",
+        "parameters": [
+          {
+            "name": "curso",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/Curso"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Curso cadastrado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/curso/{id}": {
+      "get": {
+        "tags": [
+          "Curso"
+        ],
+        "summary": "Lista um curso cadastrado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Curso encontrado"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Curso"
+        ],
+        "summary": "Atualiza um registro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          },
+          {
+            "in": "body",
+            "name": "id",
+            "description": "Modelo de atualização de curso",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/Curso"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid user supplied"
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "200": {
+            "description": "Usuário atualizado com sucesso!"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Curso"
+        ],
+        "summary": "Deleta um registro",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Curso deletado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/area": {
+      "get": {
+        "tags": [
+          "Área"
+        ],
+        "summary": "Lista todas as áreas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Área exibida com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Área"
+        ],
+        "summary": "Cria uma área",
+        "parameters": [
+          {
+            "name": "área",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/Área"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Àrea cadastrada com sucesso"
+          },
+          "500": {
+            "description": "Algo deu errado"
+          },
+          "406": {
+            "description": "Área ja existente"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/area/{id}": {
+      "get": {
+        "tags": [
+          "Área"
+        ],
+        "summary": "Exibi uma área cadastrada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Área localizada"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Área"
+        ],
+        "summary": "Atualiza uma área",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          },
+          {
+            "in": "body",
+            "name": "id",
+            "description": "modelo de atualização de área",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/Área"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Área atualizada com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Área"
+        ],
+        "summary": "Deleta uma área",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Curso deletado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/subArea": {
+      "get": {
+        "tags": [
+          "SubArea"
+        ],
+        "summary": "Exibi as subareas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "SubArea exibida com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "SubArea"
+        ],
+        "summary": "Cria uma SubArea",
+        "parameters": [
+          {
+            "name": "subArea",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/SubArea"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SubArea cadastrada com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/subArea/{id}": {
+      "get": {
+        "tags": [
+          "SubArea"
+        ],
+        "summary": "Exibi umas subArea cadastrada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SubArea localizada"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SubArea"
+        ],
+        "summary": "Atualiza uma SubArea",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          },
+          {
+            "in": "body",
+            "name": "id",
+            "description": "modelo de atualização de área",
+            "required": true,
+            "schema": {
+              "$ref": "#definitions/SubArea"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SubArea atualizada com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SubArea"
+        ],
+        "summary": "Deleta uma SubArea",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "items": {
+              "type": "int32",
+              "default": "available"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SubArea deletada com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "Se loga no aplicativo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Login efetuado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/updatePassword": {
+      "post": {
+        "tags": [
+          "Update Password"
+        ],
+        "summary": "Atualiza um password",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PasswordUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Password atualizado com sucesso"
+          },
+          "400": {
+            "description": "Algo deu errado"
+          }
+        },
+        "security": [
+          {
+            "petstore_auth": [
+              "write:pets",
+              "read:pets"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/code": {
+      "post": {
+        "tags": [
+          "User Code"
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "format": "VARCHAR(20)"
+        },
+        "email": {
+          "type": "string",
+          "format": "VARCHAR(100)"
+        },
+        "password": {
+          "type": "string",
+          "format": "VARCHAR(100)"
+        }
+      }
+    },
+    "Curso": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "format": "VARCHAR(100)"
+        },
+        "url": {
+          "type": "string",
+          "format": "VARCHAR(1000)"
+        },
+        "banner": {
+          "type": "Boolean(false)"
+        },
+        "ativo": {
+          "type": "Boolean(false)"
+        },
+        "imagem": {
+          "type": "string",
+          "format": "VARCHAR(1000)"
+        },
+        "subArea": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "Área": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "format": "VARCHAR(100)"
+        },
+        "active": {
+          "type": "Boolean(false)"
+        }
+      }
+    },
+    "SubArea": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "format": "VARCHAR(100)"
+        },
+        "active": {
+          "type": "Boolean(false)"
+        },
+        "área": {
+          "type": "integer"
+        }
+      }
+    },
+    "PasswordUpdate": {
+      "type": "object",
+      "properties": {
+        "creationDate": {
+          "type": "DATE"
+        },
+        "key": {
+          "type": "string",
+          "format": "VARCHAR(50)"
+        },
+        "useDate": {
+          "type": "DATE"
+        },
+        "user": {
+          "type": "string",
+          "format": "VARCHAR()"
+        }
+      }
+    }
+  }
+}
