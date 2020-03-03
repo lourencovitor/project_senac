@@ -416,7 +416,7 @@
         "summary": "Cria uma área",
         "parameters": [
           {
-            "name": "área",
+            "name": "area",
             "in": "body",
             "description": "",
             "required": true,
@@ -805,14 +805,8 @@
           }
         ]
       }
-    },
-    "/api/code": {
-      "post": {
-        "tags": [
-          "User Code"
-        ]
-      }
     }
+
   },
   "securityDefinitions": {
     "petstore_auth": {
