@@ -1,5 +1,3 @@
-AOS.init();
-
 var modal = document.getElementById("myModal");
 //var modalReg = document.getElementById("modalReg");
 var btn = document.querySelector("#entrar");
