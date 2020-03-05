@@ -22,3 +22,22 @@ window.addEventListener("click", function(event) {
     modal.classList.remove('aparecer-modal');
   }
 })
+
+
+let logar = document.querySelector("#logar");
+logar.addEventListener("click", async()=>{
+  let login = document.querySelector("#login").value;
+  let senha = document.querySelector("#login-senha").value;
+  const data = {name:login, password:senha};
+  Object.freeze(data)
+  
+  try {
+    const res = await axios.post(`http://localhost:8000/api/login`, data);
+    console.log(res);
+    alert("Usuário cadastrado com sucesso");
+  } catch (error) {
+    console.log(error);
+    alert("Error ao cadastrar usuário");
+  }
+
+})

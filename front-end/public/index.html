@@ -32,15 +32,15 @@
               <h3 class="subtitulo-modal">Faça seu login</h3>
               <form action="">
                 <label for="login" class="login-label">Login:</label>
-                <input type="text" name="login" class="input-login">
+                <input type="text" name="login" id="login" class="input-login">
                 <label for="senha" class="senha-label">Senha:</label>
-                <input type="password" name="senha" class="input-senha">
+                <input type="password" name="senha" id="login-senha" class="input-senha">
               </form>
               <ul>
                 <li><a href="">Esqueceu a senha?</a></li>
                 <li><a href="./Profile/registro.html">Registrar-se</a></li>
               </ul>
-              <button class="logar-modal">Logar</button>
+              <button class="logar-modal" id="logar">Logar</button>
               <button class="close-modal">Cancelar</button>
           </div>
       </div>
@@ -116,6 +116,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="js/script.js"></script>
   <script src="js/scriptModal.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
