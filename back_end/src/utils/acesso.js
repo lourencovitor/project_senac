@@ -1,7 +1,7 @@
 const dadosDaConexao = {
   database: "senacapp",
   user: "root",
-  password: "positivo20"
+  password: "root"
 };
 
 module.exports = dadosDaConexao;

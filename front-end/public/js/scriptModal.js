@@ -34,10 +34,10 @@ logar.addEventListener("click", async()=>{
   try {
     const res = await axios.post(`http://localhost:8000/api/login`, data);
     console.log(res);
-    alert("Usuário cadastrado com sucesso");
+    alert("Login efetuado com sucesso!");
   } catch (error) {
     console.log(error);
-    alert("Error ao cadastrar usuário");
+    alert("Senha ou usuário invalido!");
   }
 
 })
