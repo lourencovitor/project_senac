@@ -1,13 +1,14 @@
 hamburger = document.querySelector("#menu");
 menu = document.querySelector(".menu");
 body = document.querySelector("body");
+salvar = document.getElementById("salvar");
 
-hamburger.addEventListener("click", function (event) {
+hamburger.addEventListener("click", function(event) {
   menu.classList.toggle("open");
   body.classList.toggle("overflowhidden");
 });
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", function(event) {
   if (
     menu.classList.contains("open") &&
     !event.target.isEqualNode(hamburger) &&
@@ -16,5 +17,26 @@ document.addEventListener("click", function (event) {
     !menu.contains(event.target)
   ) {
     menu.classList.remove("open");
+  }
+});
+
+salvar.addEventListener("click", async () => {
+  name = document.getElementById("name").value;
+  email = document.getElementById("email").value;
+  password = document.getElementById("password").value;
+  const data = {
+    name,
+    email,
+    password
+  };
+  console.log(data);
+
+  try {
+    const res = await axios.post(`http://localhost:8000/api/user`, data);
+    console.log(res);
+    alert("Usuário cadastrado com sucesso");
+  } catch (error) {
+    console.log(error);
+    alert("Error ao cadastrar usuário");
   }
 });

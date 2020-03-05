@@ -94,53 +94,35 @@
 
       <div class="col-md-9 personal-info">
         <h3>Preencha todos os campos</h3>
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form"> 
           <div class="form-group">
-            <label class="col-lg-3 control-label">Nome:</label>
-            <div class="col-lg-8">
-              <input class="inputProfile" type="text" value="" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Sobrenome:</label>
-            <div class="col-lg-8">
-              <input class="inputProfile" type="text" value="" />
-            </div>
-          </div>
-          <div class="form-group about">
-            <label class="col-lg-3 control-label">Fale sobre você:</label>
-            <div class="col-lg-8">
-              <input class="inputProfile" type="text" value="" />
+            <label class="col-md-3 control-label">Usuário:</label>
+            <div class="col-md-12">
+              <input class="inputProfile" type="text" id="name" value="" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Seu e-mail:</label>
-            <div class="col-lg-8">
-              <input class="inputProfile" type="text" value="" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-md-3 control-label">Usuário:</label>
-            <div class="col-md-8">
-              <input class="inputProfile" type="text" value="" />
+            <div class="col-lg-12">
+              <input class="inputProfile" type="text" id="email" value="" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Sua senha:</label>
-            <div class="col-md-8">
-              <input class="inputProfile" type="password" value="11111122333" />
+            <div class="col-md-12">
+              <input class="inputProfile" type="password" id="password" placeholder="*******" />
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Confirme sua senha:</label>
-            <div class="col-md-8">
-              <input class="inputProfile" type="password" value="11111122333" />
+            <label class="col-md-5 control-label">Confirme sua senha:</label>
+            <div class="col-md-12">
+              <input class="inputProfile" type="password" placeholder="*******" />
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Salvar alterações" />
+            <div class="col-md-12">
+              <input type="button" id="salvar" class="btn btn-primary" value="Salvar alterações" />
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancelar" />
             </div>
@@ -153,6 +135,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="js/script.js"></script>
   <script src="../js/scriptModal.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
