@@ -9,7 +9,7 @@ img = document.querySelector("#imgLogin");
 
 hamburger.addEventListener("click", function (event) {
   menu.classList.toggle("open");
-  body.classList.toggle("overflowhidden");
+  // body.classList.toggle("overflowhidden");
 });
 
 // menuLogin.addEventListener("click", function () {

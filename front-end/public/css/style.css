@@ -479,6 +479,10 @@ figcaption {
     width: 530px;
     height: 141px;
 }
+  .caixa-rodape{
+    flex-direction: column;
+  }
+
 }
 
 @media screen and (max-width: 553px){
@@ -488,9 +492,27 @@ figcaption {
 }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 492px){
+  .logoText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logoText span{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .caixa-rodape{
+    height: 162px;
+  }
+}
+
+  @media screen and (max-width: 425px) {
   .caixa-inteira img {
-    width: 319;
+    width: 319px;
     height: 99px;
 }
   .openMenuLogin{ 
@@ -506,6 +528,7 @@ figcaption {
   }
   .logo img {
     width: 120px;
+    margin-bottom: 1rem;
   }
   .menu {
     width: 100%;
@@ -537,6 +560,12 @@ figcaption {
   }
   * {
     overflow: visible;
+  }
+}
+
+@media screen and (max-width: 396px){
+  .logoText span{
+    text-align: center;
   }
 }
 
