@@ -2,6 +2,13 @@ hamburger = document.querySelector("#menu");
 menu = document.querySelector(".menu");
 body = document.querySelector("body");
 salvar = document.getElementById("salvar");
+voltar = document.querySelector("#btn-cancelar");
+
+document.querySelector("input").focus();
+
+voltar.addEventListener("click", function(){
+  window.location.href = "http://www.localhost:4000"; 
+});
 
 hamburger.addEventListener("click", function(event) {
   menu.classList.toggle("open");
@@ -34,7 +41,12 @@ salvar.addEventListener("click", async () => {
   try {
     const res = await axios.post(`http://localhost:8000/api/user`, data);
     console.log(res);
-    alert("Usuário cadastrado com sucesso");
+    alert("Usuário cadastrado com sucesso! Aguarde você esta sendo redirecionado...");
+    if(res){
+      setTimeout(function() {
+        window.location.href = "http://localhost:4000";
+    }, 2000);
+  }
   } catch (error) {
     console.log(error);
     alert("Error ao cadastrar usuário");

@@ -34,7 +34,12 @@ logar.addEventListener("click", async()=>{
   try {
     const res = await axios.post(`http://localhost:8000/api/login`, data);
     console.log(res);
-    alert("Login efetuado com sucesso!");
+    alert("Login efetuado com sucesso! Aguarde voce sera redirecionado...");
+    if(res){
+      setTimeout(function() {
+        window.location.href = "http://localhost:4000";
+    }, 2000);
+    }
   } catch (error) {
     console.log(error);
     alert("Senha ou usuário invalido!");
