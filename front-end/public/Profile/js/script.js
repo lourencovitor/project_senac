@@ -41,12 +41,9 @@ salvar.addEventListener("click", async () => {
   try {
     const res = await axios.post(`http://localhost:8000/api/user`, data);
     console.log(res);
-    alert("Usuário cadastrado com sucesso! Aguarde você esta sendo redirecionado...");
-    if(res){
-      setTimeout(function() {
-        window.location.href = "http://localhost:4000";
-    }, 2000);
-  }
+      alert("Login efetuado com sucesso");
+      window.location="http://localhost:4000";
+
   } catch (error) {
     console.log(error);
     alert("Error ao cadastrar usuário");
