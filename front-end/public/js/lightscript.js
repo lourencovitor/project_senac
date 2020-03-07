@@ -51,12 +51,23 @@ $(document).ready(function() {
                   }
             },
             {
-                breakpoint:480,
+                breakpoint:550,
                 settings: {
                     item:1,
                     slideMove:1
                   }
-            }],
+            },
+
+            {
+                breakpoint:480,
+                settings: {
+                    item:1,
+                    slideMove:1
+                }
+            }
+
+
+            ],
  
             onBeforeStart: function (el) {},
             onSliderLoad: function (el) {},
