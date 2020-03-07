@@ -3,12 +3,18 @@ const md5 = require("crypto-md5");
 
 module.exports = {
   async show(req, res) {
-    const { name, password } = req.body;
+    const { email, password } = req.body;
     const hash = md5(password, "hex");
+
+    var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!reg.test(email)) {
+      return res.json({ message: `Email invalido` });
+    }
+
     try {
       const exibeRes = await User.findOne({
         where: {
-          name,
+          email,
           password: hash
         }
       });
