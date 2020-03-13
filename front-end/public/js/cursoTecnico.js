@@ -1,3 +1,20 @@
+sair.addEventListener("click", () => {
+  sessionStorage.removeItem("user");
+  window.location = "http://localhost:4000";
+});
+
+if (!sessionStorage.getItem("user")) {
+  document.querySelector(".logout").style.display = "none";
+}
+
+if (sessionStorage.getItem("user")) {
+  document.getElementById("navNaoLogado").style.display = "none";
+  document.getElementById("navLogado").style.display = "block";
+} else {
+  document.getElementById("navLogado").style.display = "none";
+  document.getElementById("navNaoLogado").style.display = "block";
+}
+
 function cursosTecnicos() {
   let lslider = document.getElementById("lslider");
   axios

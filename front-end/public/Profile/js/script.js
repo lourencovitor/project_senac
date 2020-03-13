@@ -6,8 +6,8 @@ voltar = document.querySelector("#btn-cancelar");
 
 document.querySelector("input").focus();
 
-voltar.addEventListener("click", function(){
-  window.location.href = "http://www.localhost:4000"; 
+voltar.addEventListener("click", function() {
+  window.location.href = "http://www.localhost:4000";
 });
 
 hamburger.addEventListener("click", function(event) {
@@ -41,9 +41,8 @@ salvar.addEventListener("click", async () => {
   try {
     const res = await axios.post(`http://localhost:8000/api/user`, data);
     console.log(res);
-      alert("Login efetuado com sucesso");
-      window.location="http://localhost:4000";
-
+    alert("Usuário cadastrado com sucesso");
+    window.location = "http://localhost:4000";
   } catch (error) {
     console.log(error);
     alert("Error ao cadastrar usuário");

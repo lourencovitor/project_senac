@@ -49,7 +49,7 @@
   <!-- Menu Hamburguer -->
   <label for="check"><i class="material-icons" id="menu">menu</i></label>
   <div class="menu">
-    <nav>
+    <nav id="navNaoLogado">
       <div class="profileI">
         <section></section>
       </div>
@@ -67,9 +67,27 @@
         </div>
       </div>
     </nav>
+    <nav id="navLogado">
+      <div class="profileI">
+        <section></section>
+      </div>
+      <div class="options">
+        <div class="optionsProfile">
+          <section class="profileUI">
+            <a href="#"><img src="img/home.svg" alt="" />Meu Perfil</a>
+          </section>
+          <!-- <section class="profileUI" id="entrar">
+            <img src="img/editprofile.svg" alt="" />Entrar</a>
+          </section>
+          <section class="profileUI" id="registrar">
+            <a href="./Profile/registro.html"><img src="img/interesses.svg" alt="" />Registrar-se</a>
+          </section> -->
+        </div>
+      </div>
+    </nav>
     <div class="logout">
       <section>
-        <a href=""><img src="img/logout.svg" alt="" />Sair</a>
+        <a href="#" id="sair"><img src="img/logout.svg" alt="" />Sair</a>
       </section>
     </div>
   </div>
