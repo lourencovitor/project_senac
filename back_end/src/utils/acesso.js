@@ -1,6 +1,6 @@
 const dadosDaConexao = {
-  database: "projetoSenac",
-  user: "vitor",
+  database: "senacapp",
+  user: "root",
   password: "positivo20"
 };
 

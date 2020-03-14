@@ -87,7 +87,9 @@ const listComponent = data => {
       return `
           <section class="caixa-cursos">
           <figure>
-            <img src="${item.imagem}" alt="">
+            <img src="${
+              item.imagem == "" ? "../img/imagemPadrao.jpg" : item.imagem
+            }" alt="">
             <h3 class="titulo-curso">${item.description}</h3>
               <hr>
               <a href="${item.url}" class="linkCursos">Mais</a>             

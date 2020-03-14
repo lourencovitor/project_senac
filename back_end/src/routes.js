@@ -9,6 +9,7 @@ const SubAreaController = require("./controllers/SubAreaController");
 const CursoController = require("./controllers/CursoController");
 const swaggerJsDoc = require("../swagger.json");
 const swaggerUi = require("swagger-ui-express");
+const multer = require("./config/multer");
 
 routes.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc));
 
@@ -39,5 +40,36 @@ routes.get("/api/curso", CursoController.index);
 routes.get("/api/curso/:id", CursoController.show);
 routes.put("/api/curso/:id", CursoController.update);
 routes.delete("/api/curso/:id", CursoController.delete);
+
+routes.get("/nova-imagem", (req, res) => {
+  res.send(`
+        <html>
+            <head>
+                <title> Nova imagem </title>
+            </head>
+            </body>
+                <!-- O enctype é de extrema importância! Não funciona sem! -->
+                <form action="/nova-imagem"  method="POST" enctype="multipart/form-data">
+                    <!-- O NAME do input deve ser exatamente igual ao especificado na rota -->
+                    <input type="file" name="image">
+                    <button type="submit"> Enviar </button>
+                </form>
+            </body>
+        </html>
+    `);
+  return;
+});
+
+routes.post("/nova-imagem", multer.single("image"), (req, res, next) => {
+  return;
+  // Se houve sucesso no armazenamento
+  if (req.file) {
+    // Vamos imprimir na tela o objeto com os dados do arquivo armazenado
+    return res.send(req.file);
+  }
+
+  // Se o objeto req.file for undefined, ou seja, não houve sucesso, vamos imprimir um erro!
+  return res.send("Houve erro no upload!");
+});
 
 module.exports = routes;
